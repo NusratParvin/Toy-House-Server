@@ -1,0 +1,102 @@
+ [
+      {
+        "picture_url": "https://example.com/images/lamborghini-aventador.jpg",
+        "name": "Drift Car",
+        "category": "Sports Car",
+        "price": 29.99,
+        "rating": 4.5,
+        "quantity": 10,
+        "seller_name":"Seller 3",
+        "seller_email":"seller@gmail.com",
+        "description": "Experience the thrill of driving a Drift Car with this highly detailed toy car. It features realistic design, opening doors, and a high-quality finish."
+      },
+      {
+        "picture_url": "https://m.media-amazon.com/images/I/71k2TBpPUlL._AC_SX679_.jpg",
+        "name": "Ferrari 488 GTB",
+        "category": "Sports Car",
+        "price": 24.99,
+        "rating": 4.8,
+        "quantity": 15,
+        "seller_name":"Seller 1",
+        "seller_email":"seller@gmail.com",
+        "description": "Get ready to race with the iconic Ferrari 488 GTB toy car. It's beautifully crafted, with a sleek design, smooth wheels, and authentic Ferrari branding."
+      },
+      {
+        "picture_url": "https://img.fruugo.com/product/7/36/158079367_max.jpg",
+        "name": "Porsche 911 GT3 RS",
+        "category": "Sports Car",
+        "price": 34.99,
+        "rating": 4.7,
+        "quantity": 12,
+        "seller_name":"Seller 1",
+        "seller_email":"seller@gmail.com",
+        "description": "Immerse yourself in luxury with the Porsche 911 GT3 RS toy car. It replicates the iconic Porsche design and offers a smooth driving experience."
+      },
+      {
+        "picture_url": "https://ae01.alicdn.com/kf/HTB1CkPClRDH8KJjSspnq6zNAVXa0/Flytec-1-58-scale-Mini-Model-4CH-boys-Remote-control-fire-truck-RC-Electronic-Truck-Toy.jpg",
+        "name": "Regular Fire Truck",
+        "category": "Fire Truck",
+        "price": 24.99,
+        "rating": 4.3,
+        "quantity": 10,
+        "seller_name":"Seller 3",
+        "seller_email":"seller@gmail.com",
+        "description": "Encourage eco-friendly play with the Fire Truck. It is made from recycled plastic, features a working ladder, and inspires creative storytelling and firefighting adventures."
+      },
+      {
+        "picture_url": "https://th.bing.com/th/id/R.b98aa516d99991b50327396ef8a1a1b3?rik=EzPqiLPQ4rjrSw&riu=http%3a%2f%2fc.shld.net%2frpx%2fi%2fs%2fi%2fspin%2fimage%2fspin_prod_1125153612%3f%3fhei%3d64%26wid%3d64%26qlt%3d50&ehk=9q5LfCQvHVlzPco%2f6RtYCo9qFhJCU6Bn7yn%2bqZj8El8%3d&risl=&pid=ImgRaw&r=0",
+        "name": "Big Firefighter Truck",
+        "category": "Fire Truck",
+        "price": 39.99,
+        "rating": 4.5,
+        "quantity": 15,
+        "seller_name":"Seller 2",
+        "seller_email":"seller@gmail.com",
+        "description": "Let your child become a heroic firefighter with the Firefighter truck. It includes a fire truck, firefighter figure, and accessories for imaginative play and rescue missions."
+      },
+      {
+        "picture_url": "https://m.media-amazon.com/images/I/81CDo8OSs8L.jpg",
+        "name": "Paw Patrol Marshall Fire Truck",
+        "category": "Fire Truck",
+        "price": 29.99,
+        "rating": 4.7,
+        "quantity": 20,
+        "seller_name":"Seller 1",
+        "seller_email":"seller@gmail.com",
+        "description": "Join Marshall from Paw Patrol on exciting rescue missions with the Marshall Fire Truck toy. It features a fun Paw Patrol theme, extendable ladder, and interactive lights and sounds."
+      },
+      {
+        "picture_url": "https://m.media-amazon.com/images/I/71e+ZX2tIjL._AC_SX679_.jpg",
+        "name": "Hot Wheels Car",
+        "category": "Regular Car",
+        "price": 19.99,
+        "rating": 4.6,
+        "quantity": 15,
+        "seller_name":"Seller 3",
+        "seller_email":"seller@gmail.com",
+        "description": "Ignite your child's love for cars with the Hot Wheels Car. It includes 20 different die-cast cars with various designs and colors for endless racing and imaginative play."
+      },
+      {
+        "picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS81aEhv1Gb4BF4aCYXYQGXZSbVflXNyn-oXw&usqp=CAU",
+        "name": "Lightning McQueen",
+        "category": "Regular Car",
+        "price": 14.99,
+        "rating": 4.5,
+        "quantity": 10,
+        "seller_name":"Seller 2",
+        "seller_email":"seller@gmail.com",
+        "description": "Race into the world of Disney Pixar Cars with the Lightning McQueen toy. It features a detailed character design, rolling wheels, and is perfect for recreating beloved movie moments."
+      },
+      {
+        "picture_url": "https://cdn.shopify.com/s/files/1/0526/7144/7238/products/pull-back-car-toy-flying-tiger-copenhagen-782764.jpg?v=1669309565&width=1200",
+        "name": "Pull-Back Vehicles",
+        "category": "Regular Car",
+        "price": 24.99,
+        "rating": 4.3,
+        "quantity": 12,
+        "seller_name":"Seller 1",
+        "seller_email":"seller@gmail.com",
+        "description": "Introduce learning and play with the Fisher-Price Laugh & Learn Pull-Back Vehicles. They feature friendly faces, pull-back action, and interactive phrases and songs to engage and entertain kids."
+      }
+    ]      
+  
