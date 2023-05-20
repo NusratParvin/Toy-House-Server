@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config()
 const port = process.env.PORT || 5000
 
@@ -9,8 +9,8 @@ app.use(cors())
 app.use(express.json())
 
 
-app.get('/',(req,res)=>{
-    res.send('Toy House server is running')
+app.get('/', (req, res) => {
+  res.send('Toy House server is running')
 })
 
 
@@ -34,16 +34,31 @@ async function run() {
 
     const carCollection = client.db('toyCars').collection('carCollection')
 
-    app.get('/allCars',async(req,res)=>{
-      const result = await carCollection.find().toArray()
+    app.get('/allCars', async (req, res) => {
+      const result = await carCollection.find().limit(20).toArray()
       console.log(result);
       res.send(result)
     })
 
-    app.get('/allCars/:category',async(req,res)=>{
+    app.get('/allCars/:category', async (req, res) => {
       const category_name = req.params.category
-      console.log(category_name);
-      const result = await carCollection.find({category: category_name}).toArray()
+      // console.log(category_name);
+      const result = await carCollection.find({ category: category_name }).toArray()
+      res.send(result)
+    })
+    app.get('/cars/:byName', async (req, res) => {
+      const byName = req.params.byName
+      console.log(byName);
+
+      const result = await carCollection.find({ name: { $regex: byName, $options: "i" } }).toArray();
+      res.send(result)
+
+
+    })
+    app.get('/carDetails/:id', async (req, res) => {
+      const id = new ObjectId(req.params.id)
+      console.log(id, 'this is id');
+      const result = await carCollection.findOne({ _id: id })
       res.send(result)
     })
 
@@ -59,6 +74,6 @@ run().catch(console.dir);
 
 
 
-app.listen(port,()=>{
-    console.log(`Toy House is running on port ${port}`);
+app.listen(port, () => {
+  console.log(`Toy House is running on port ${port}`);
 })
