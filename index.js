@@ -57,6 +57,8 @@ async function run() {
     })
 
 
+
+
     app.get('/myToys/:email', async (req, res) => {
       const email = req.params.email
       console.log(email);
@@ -92,6 +94,28 @@ async function run() {
       const id = new ObjectId(req.params.id)
       const result = await carCollection.deleteOne({_id:id});
       res.send(result)
+
+    })
+    app.put('/updateToy/:id',async(req,res)=>{
+      const id = new ObjectId(req.params.id)
+      const updatedInfo = req.body;
+      console.log(updatedInfo);
+      const filter = { _id: new ObjectId(id) };
+      const updateDoc = {
+        $set: {
+          name: updatedInfo.name,
+          photo_url: updatedInfo.photo_url,
+          category: updatedInfo.category,
+          price: updatedInfo.price,
+          rating: updatedInfo.rating,
+          seller_email: updatedInfo.seller_email,
+          seller_name: updatedInfo.seller_name,
+          description: updatedInfo.description,
+          quantity: updatedInfo.quantity,
+        },
+      };
+      const result = await carCollection.updateOne(filter, updateDoc);
+      res.send(result);
 
     })
 
