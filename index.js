@@ -39,7 +39,7 @@ async function run() {
       console.log(result);
       res.send(result)
     })
-  
+
 
     app.get('/allCars/:category', async (req, res) => {
       const category_name = req.params.category
@@ -56,14 +56,32 @@ async function run() {
       res.send(result)
     })
 
+    // app.get('/myToys/:email', async (req, res) => {
+    //   const email = req.params.email
+    //   console.log(email);
+    //   const result = await carCollection.find({ seller_email: email }).toArray();
+    //   res.send(result)
+    // })
 
 
+    app.get('/myToys', async (req, res) => {
+      let index = 1;
+      const order = req.query.order
+      const email = req.query.email
+      console.log(req.query, 'here');
+      if (order !== 'ascending') {
+        index = -1
+      }
+      console.log(order);
+      if (order !== undefined) {
+        const result = await carCollection.find({ seller_email: email }).sort({ price: index }).toArray();
+        res.send(result)
+      }
+      else {
+        const result = await carCollection.find({ seller_email: email }).toArray();
+        res.send(result)
+      }
 
-    app.get('/myToys/:email', async (req, res) => {
-      const email = req.params.email
-      console.log(email);
-      const result = await carCollection.find({ seller_email: email }).toArray();
-      res.send(result)
     })
 
 
@@ -90,13 +108,15 @@ async function run() {
     });
 
 
-    app.delete('/allCars/:id',async(req,res)=>{
+    app.delete('/allCars/:id', async (req, res) => {
       const id = new ObjectId(req.params.id)
-      const result = await carCollection.deleteOne({_id:id});
+      const result = await carCollection.deleteOne({ _id: id });
       res.send(result)
 
     })
-    app.put('/updateToy/:id',async(req,res)=>{
+
+
+    app.put('/updateToy/:id', async (req, res) => {
       const id = new ObjectId(req.params.id)
       const updatedInfo = req.body;
       console.log(updatedInfo);
