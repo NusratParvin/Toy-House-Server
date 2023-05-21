@@ -29,7 +29,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
 
     const carCollection = client.db('toyCars').collection('carCollection')
@@ -39,6 +39,7 @@ async function run() {
       console.log(result);
       res.send(result)
     })
+  
 
     app.get('/allCars/:category', async (req, res) => {
       const category_name = req.params.category
@@ -46,20 +47,52 @@ async function run() {
       const result = await carCollection.find({ category: category_name }).toArray()
       res.send(result)
     })
+
+
     app.get('/cars/:byName', async (req, res) => {
       const byName = req.params.byName
       console.log(byName);
-
       const result = await carCollection.find({ name: { $regex: byName, $options: "i" } }).toArray();
       res.send(result)
-
-
     })
+
+
+    app.get('/myToys/:email', async (req, res) => {
+      const email = req.params.email
+      console.log(email);
+      const result = await carCollection.find({ seller_email: email }).toArray();
+      res.send(result)
+    })
+
+
     app.get('/carDetails/:id', async (req, res) => {
       const id = new ObjectId(req.params.id)
       console.log(id, 'this is id');
       const result = await carCollection.findOne({ _id: id })
       res.send(result)
+    })
+
+    app.post("/addCar", async (req, res) => {
+      const body = req.body;
+      body.createdAt = new Date();
+      console.log(body);
+      const result = await carCollection.insertOne(body);
+      if (result?.insertedId) {
+        return res.status(200).send(result);
+      } else {
+        return res.status(404).send({
+          message: "Addition unsuccessful!",
+          status: false,
+        });
+      }
+    });
+
+
+    app.delete('/allCars/:id',async(req,res)=>{
+      const id = new ObjectId(req.params.id)
+      const result = await carCollection.deleteOne({_id:id});
+      res.send(result)
+
     })
 
     // Send a ping to confirm a successful connection
