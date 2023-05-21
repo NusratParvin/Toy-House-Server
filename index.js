@@ -134,6 +134,7 @@ async function run() {
           quantity: updatedInfo.quantity,
         },
       };
+      console.log(updateDoc);
       const result = await carCollection.updateOne(filter, updateDoc);
       res.send(result);
 
